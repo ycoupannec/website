@@ -10,23 +10,55 @@
 
 	<?php 
 		$args = array(
-			'post_type' => 'still_image'
+			'post_type' => 'still_image',
+			'posts_per_page' => 20,
 		);
-		$query = new WP_Query( $args );
+		
+		$records = get_posts($args);
 	?>
 	<div class="grid-container">
-	<?php if ( $query->have_posts()): while ( $query->have_posts()) : $query->the_post(); ?>
-		<?php if( have_rows('images') ): ?>
-			<?php while( have_rows('images') ): the_row(); 
-				// vars
-				$image = get_sub_field('image');
+	<?php if ( !empty($records) ):  ?>
+
+		<?php foreach($records as $record): ?>
+
+			<?php //print_r($record); ?>
+
+			<h3><?php echo $record->post_title; ?></h3>
+
+			<?php 
+
+				$images = get_field('images',$record->ID);
+
+				if(!empty($images)): ?>
+
+					<div class="grid-3 imageGallery">
+
+						<?php foreach($images as $image): ?>
+
+								<?php //print_r($image); ?>
+
+								<?php if(isset($image['image']['sizes']['thumbnail'])): ?>
+
+									<img src="<?php echo $image['image']['sizes']['thumbnail']; ?>" alt="<?php echo $image['image']['alt'] ?>" />		
+
+								<?php endif; ?>
+
+
+						<?php endforeach; ?>
+
+					</div><!-- .imageGallery -->
+			<?php
+
+				endif;
+
 			?>
-			<div class="grid-3 imageGallery">
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />		
-			</div>
-			<?php endwhile; ?>
-		<?php endif; ?>
-	<?php endwhile; endif; wp_reset_postdata(); ?>
+				
+			<hr style="clear:both;" />
+
+		<?php endforeach; ?>
+
+	<?php endif; ?>
+
 	</div>
 
 <?php get_footer(); ?>
