@@ -4,6 +4,9 @@
 	<!-- section -->
 	<section>
 
+	<!-- In the page-still_image.php, we get out posts by using an $args array with 'post_type' as 
+	an argument. Not entirely sure whether we want to do the same here, or whether WP will
+	know the post_type, from the naming convention of the template, i.e. single-still_image. -->
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
