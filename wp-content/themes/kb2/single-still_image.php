@@ -26,13 +26,47 @@
 				</div>
 
 				<div class='grid-3'>
-					<h3>Collections</h3><p><?php the_field( 'collections' ); ?></p>
+
+					<h3>Collections</h3>
+
+					<ul>
+						<?php 
+							
+							$collections = get_field( 'collections' ); 
+							//print_r($collections); 
+
+							if( !empty($collections) ):
+								foreach($collections as $collection): ?>
+
+									<li><a href="<?php echo get_term_link($collection->term_id); ?>" class="term collection"><?php echo $collection->name; ?></a></li>
+
+							<?php
+								endforeach;
+							endif;
+						?>
+					</ul>
+
+
 					<h3>Tags</h3>
-					<?php 
-						$tags = get_field( 'tags' );
-						if( !empty($tags) ) : ?>
-						<h3>Tags</h3><p><?php echo $tags; ?><p>
-					<?php endif; ?>
+					
+					<ul>
+						<?php 
+							
+							$tags = get_field( 'tags' ); 
+							//print_r($tags); 
+
+							if( !empty($tags) ):
+								foreach($tags as $tag): ?>
+
+									<li><a href="<?php echo get_term_link($tag->term_id); ?>" class="term tag"><?php echo $tag->name; ?></a></li>
+
+							<?php
+								endforeach;
+							endif;
+						?>
+					</ul>
+
+
 					<h3>Subjects</h3>
 					<?php
 					//trying to echo out the subjects for an individual image.
