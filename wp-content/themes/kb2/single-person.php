@@ -24,8 +24,17 @@
 							<p><?php echo $first_name . " " . $middle_names . " " . $family_name; ?></p>
 						<?php endwhile; endif; ?>
 					
-					<h3>Known as:</h3><p><?php the_field( 'known_as' ) ?></p>
-					<h3>Military identification:</h3><p><?php the_field( 'military_identification' ); ?></p>
+					<h3>Known as:</h3>
+					<?php $known_as = get_field('known_as');
+					if($known_as): ?>
+						<p><?php echo $known_as; ?></p>
+					<?php endif; ?>
+					
+					<h3>Military identification:</h3>
+					<?php $military_identification = get_field('military_identification');
+					if($military_identification): ?> 
+						<p><?php echo $military_identification; ?></p>
+					<?php endif; ?>
 				</div>
 
 				<div class='grid-6'>
