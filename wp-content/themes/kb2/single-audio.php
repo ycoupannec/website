@@ -12,17 +12,76 @@
 			<div class="grid-container">
 				<div class='grid-6'>
 				<!-- post title -->
-				<h1>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				</h1>
-				<!-- /post title -->
+				
 
 				
 					<?php 
-						$file = get_field('audio');
-						if( $file ): ?>	
-							<h3>Web File</h3><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
+						$file = get_field( 'audio' );
+						if( !empty($file) ): ?>
+							<h1>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+							</h1>
+							<audio controls>
+								<source src="<?php echo $file['url']; ?>" type="<?php echo $file['mime_type']; ?>">
+							</audio>
 						<?php endif; ?>
+				</div>
+					
+				<div class='grid-3'>
+					<?php 
+						$collections = get_field( 'collections' );
+						if( !empty( $collections ) ): ?>
+							<h3>Collections</h3>
+							<?php foreach( $collections as $collection ):
+								echo $collection->name; ?>
+							<?php endforeach; 
+						endif; 
+					?>
+
+					<?php
+						$tags = get_field( 'tags' );
+						if( !empty( $tags ) ): ?>
+							<h3>Tags</h3>
+							<?php foreach( $tags as $tag ):
+								echo $tag->name; ?>
+							<?php endforeach; 
+						endif;
+					?>
+
+					<?php 
+						$subjects = get_field( 'subjects' );
+						if( !empty( $subjects) ): ?>
+							<h3>Subjects</h3>
+							<?php foreach( $subjects as $subject ):
+								echo $subject->name; ?> 
+							<?php endforeach;
+						endif;
+					?>
+				</div>
+					
+				<div class='grid-3'>
+
+					<?php 
+						$originalFormat = get_field( 'format_original' );
+						if( !empty( $originalFormat ) ): ?>
+							<h3>Original Format</h3><?php echo $originalFormat; ?>
+						<?php endif;
+					?> 
+
+					<?php
+						$original_digital_file = get_field( 'master' );
+						if( !empty($original_digital_file) ): ?>
+							<h3>Original Digital File</h3><p><?php echo $original_digital_file['title']; ?></p> 
+						<?php endif; 
+					?>
+
+					<?php 
+						$accessionNumber = get_field( 'accession_number' );
+						if( !empty( $accessionNumber ) ): ?>
+							<h3>Accession Number</h3><?php echo $accessionNumber; ?>
+						<?php endif;
+					?>
+
 				</div>
 			</div>
 
