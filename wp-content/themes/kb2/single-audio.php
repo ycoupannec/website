@@ -81,8 +81,8 @@
 							<h3>Accession Number</h3><?php echo $accessionNumber; ?>
 						<?php endif;
 					?>
-
-				</div>
+	
+			</div>
 			</div>
 
 			<!-- post thumbnail -->

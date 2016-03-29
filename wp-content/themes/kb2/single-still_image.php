@@ -36,7 +36,7 @@
 						<?php 
 							
 							$collections = get_field( 'collections' ); 
-							//print_r($collections); 
+							print_r($collections); 
 
 							if( !empty($collections) ):
 								foreach($collections as $collection): ?>

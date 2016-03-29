@@ -24,25 +24,28 @@
 							<p><?php echo $first_name . " " . $middle_names . " " . $family_name; ?></p>
 						<?php endwhile; endif; ?>
 					
-					<h3>Known as:</h3>
+					
 					<?php $known_as = get_field('known_as');
 					if($known_as): ?>
+						<h3>Known as:</h3>
 						<p><?php echo $known_as; ?></p>
 					<?php endif; ?>
 					
-					<h3>Military identification:</h3>
+					
 					<?php $military_identification = get_field('military_identification');
-					if($military_identification): ?> 
+					if($military_identification): ?>
+						<h3>Military identification:</h3> 
 						<p><?php echo $military_identification; ?></p>
 					<?php endif; ?>
 				</div>
 
 				<div class='grid-6'>
-					<h3>Born:</h1><p><?php the_field( 'birthdate' ); ?></p>
-					<h3>Children:</h1>
+					<h3>Born:</h3><p><?php the_field( 'birthdate' ); ?></p>
+					
 					</div>
 					<div class='grid-6'>
 					<?php if( have_rows( 'children' ) ): ?>
+						<h3>Children:</h3>
 							<?php while( have_rows( 'children' ) ) : the_row();
 								//vars 
 								$first_name = get_sub_field( 'first_name' );

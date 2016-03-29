@@ -22,8 +22,9 @@
 		<?php foreach($records as $record): ?>
 
 			<?php //print_r($record); ?>
-
+			<a href='<?php echo get_permalink($record->ID); ?>'>
 			<h3><?php echo $record->post_title; ?></h3>
+			</a>
 
 			<?php 
 
