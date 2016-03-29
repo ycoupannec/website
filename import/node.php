@@ -34,14 +34,14 @@
 		    'post_content' => (isset($node['body']['und'][0]['value']) ? $node['body']['und'][0]['value'] : ''),
 		    'post_status' => $status,
 		    'post_type' => $mode,
-		    'import_id' => $node['nid'],
+		    'import_id' => $node['nid'], //preserve Drupal nid
 		    'post_author' => $node['uid']
 		);
 		$new_post_id = wp_insert_post( $new_post );		
 
 		echo 'Inserted ' . $new_post_id . "\n";
 	
-		unset($node['body']);
+		unset($node['body']); //I will unset things from my temporary $node array as I go, so I can see at the end what's left / not processed
 
 		//Collections
 		if(isset($node['field_collections']['und'][0]['tid'])){
