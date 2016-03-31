@@ -8,6 +8,29 @@
 
 	<h1><?php the_title(); ?></h1>
 
+	<?php
+
+		$subjects = $wpdb->get_results(
+			"
+			SELECT DISTINCT t.term_id, t.name 
+			FROM `wp_term_taxonomy` tt 
+			LEFT JOIN `wp_term_relationships` tr ON tt.term_taxonomy_id = tr.term_taxonomy_id 
+			LEFT JOIN `wp_posts` p ON tr.object_id = p.ID 
+			LEFT JOIN `wp_terms` t ON t.term_id = tt.term_id 
+			WHERE p.post_type = 'still_image' 
+			AND tt.taxonomy = 'subject'
+			ORDER BY tt.term_id ASC
+			"
+		);
+
+		if( !empty($subjects)):
+			foreach($subjects as $subject) : ?>
+				<?php echo $subject->name; ?>
+			<?php endforeach;
+		endif;
+		
+	?>
+
 	<?php 
 		$args = array(
 			'post_type' => 'still_image',
