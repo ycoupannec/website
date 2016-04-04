@@ -25,7 +25,15 @@
 
 		if( !empty($subjects)):
 			foreach($subjects as $subject) : ?>
-				<?php echo $subject->name; ?>
+				<?php 
+					//Not sure where I'm going wrong here. As I understand it,
+					//we need to get the ID of a term(in our case $subject)
+					//and pass it as an argument to get_term_link(). If this works
+					//we should get a string to echo out in our <a href="">
+					$termLinks = get_term_link($subject->term_id);
+					print_r($termLinks);
+					echo $subject->name; 
+				?>
 			<?php endforeach;
 		endif;
 		
