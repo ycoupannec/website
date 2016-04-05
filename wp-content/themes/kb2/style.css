@@ -575,14 +575,14 @@ footer {
 
 /* Image Overylay Highlight on index.html
 ---------------------------------*/
-.page-home .image {
+.homepage .image {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	background-color: #f8f3ef;
 }
 
-.page-home .text {
+.homepage .text {
     max-width: 100%;
 	max-height: 100%;
     background: rgba(121, 151, 241, 0.2);
@@ -596,7 +596,7 @@ footer {
     transition: opacity 0.1s ease;
 }
 
-.page-home .text:hover {
+.homepage .text:hover {
 	opacity: 1;
 }
 
