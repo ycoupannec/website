@@ -1,11 +1,12 @@
 <?php  get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+
+		<section class="tiles">
 
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+			
 
 			<?php 
 
@@ -15,9 +16,24 @@
 
 				get_template_part('tile', $post->post_type);
 
-			?>			
+			?>	
+
+			
 
 		<?php endwhile; ?>
+
+
+		<?php 
+
+			// Previous/next page navigation.
+			the_posts_pagination( array(
+				'prev_text'          => 'Previous page',
+				'next_text'          => 'Next Page',
+				'before_page_number' => '',
+			) );
+
+		?>
+
 
 		<?php else: ?>
 
@@ -32,8 +48,6 @@
 		<?php endif; ?>
 
 		</section>
-		<!-- /section -->
-	</main>
 
 
 

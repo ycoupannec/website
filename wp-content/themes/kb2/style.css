@@ -95,7 +95,7 @@ input:focus {
 }
 /* footer */
 .footer {
-
+	clear:both;
 }
 
 /*------------------------------------*\
@@ -575,14 +575,14 @@ footer {
 
 /* Image Overylay Highlight on index.html
 ---------------------------------*/
-.image {
+.page-home .image {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	background-color: #f8f3ef;
 }
 
-.text {
+.page-home .text {
     max-width: 100%;
 	max-height: 100%;
     background: rgba(121, 151, 241, 0.2);
@@ -596,7 +596,7 @@ footer {
     transition: opacity 0.1s ease;
 }
 
-.text:hover {
+.page-home .text:hover {
 	opacity: 1;
 }
 
@@ -1125,10 +1125,111 @@ nav#nav-mobile {
 }
 
 
+/* Tiles
+------------------- */
+
+.tiles { display: block; box-sizing: border-box;  max-width:1200px; margin:0 auto;}
+
+.tiles .tile { 
+	display:block;  
+	margin:0; 
+	padding:20px; 	
+	width:33%;
+	float:left;	
+}
+
+.tiles .tile .inner {
+	background-color:#f8f8f8;
+	padding:20px;
+}
+
+.tiles .tile:nth-child(3n+1) {
+	clear:left;
+}
+
+.tiles .tile .imageWrap {
+    max-height: 280px;
+    overflow-y: hidden;
+}
+
+
+@media (max-width: 800px) {
 	
+	.tiles .tile {
+		width: 50%;		
+	}
+
+	.tiles .tile:nth-child(3n+1) {
+		clear:none;
+	}	
+
+	.tiles .tile:nth-child(2n+1) {
+		clear:left;
+	}
+
+}
+
+
+@media (max-width: 600px) {
+	
+	.tiles .tile {
+		width: 100%;		
+	}
+
+}
+
+
+	
+/* Pagination
+--------------------*/
+
+
+.pagination {
+	background-color: #fff;
+	border-top: 1px solid rgba(51, 51, 51, 0.1);
+	clear:both;	
+}
+
+.pagination .screen-reader-text {
+	display:none;
+}
+
+.pagination .nav-links {
+	min-height: 3.2em;
+	position: relative;
+	text-align: center;
+}
+
+
+.pagination .page-numbers {
+	line-height: 3.2em;
+	padding: 0 0.6667em;
+}
+
+.pagination .page-numbers.current {
+	text-transform: uppercase;
+}
+
+.pagination .current {
+	display: inline-block;
+	font-weight: 700;
+}
 
 
 
+.pagination .prev:before,
+.pagination .next:before {
+	font-size: 32px;
+	height: 48px;
+	line-height: 48px;
+	position: relative;
+	width: 48px;
+}
+
+.pagination a:hover,
+.pagination a:focus {
+	text-decoration:underline;
+}
 
 
 
