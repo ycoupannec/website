@@ -67,9 +67,12 @@
 	            strtolower($letter) . '%' //family names starting with our letter
 	        ));
 
-	        //print_r($rows);    
+			$counter = 0;
+			$number_of_rows = count($rows); 
 
-			// loop through the results
+	        //print_r($rows);   ?> 
+		<div class="grid-container peopleNames">
+		<?php	// loop through the results
 			if( !empty($rows) ) :
 
 				foreach( $rows as $row ) : //rows contain just post ids for our people
@@ -84,35 +87,42 @@
 						//print_r($images);
 
 						//etc - see http://new.knowledgebank.org.nz/wp-admin/post.php?post=36254&action=edit for more field names
-
+						$counter++;
 					?>
-						<div class="grid-container peopleNames">
-							<div class="grid-12 peopleList">
-								<div class="grid-6 personname">
+						
+							<div class="grid-4 peopleList">
+								
 									<a href="<?php echo get_permalink( $person->ID ); ?>">
 										<li><?php echo $name[0]['family_name'] . ', ' . $name[0]['first_name'] . ' ' . $name[0]['middle_names'] ?></li>
 									</a>
-								</div>
+								
 
 								<?php if(!empty($images) && isset($images[0]['image']['sizes']['thumbnail'])): ?>
-									<div class="grid-2 personimage">
+									
 										<a href="<?php echo get_permalink( $person->ID ); ?>">
 											<img src="<?php echo $images[0]['image']['sizes']['thumbnail']; ?>" />
 										</a>
-									</div>
+									
 								<?php endif; ?>
 
 							</div>
-						</div>
+						
 
-	<?php
+					<?php if ( $counter % 3 == 0 && $counter != $number_of_rows) : ?>
+        				</div><div class='grid-container peopleNames'>
+        			<?php endif; ?>
+
+				<?php
 					
 
 				endforeach; //foreach($rows)
 
-			endif; //if($rows)
+			
+			endif; //if($rows) ?> 
+		
+		</div> <!-- close grid-container div -->
 
-		endif; //if($letter)
+		<?php endif; //if($letter)
 
 	?>
 
