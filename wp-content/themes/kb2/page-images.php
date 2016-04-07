@@ -17,8 +17,10 @@
 			ORDER BY tt.term_id ASC
 			"
 		);
-		$counter = 0;
-		$number_of_subjects = count($subjects);
+
+		$counter = 0; //used to keep track of loop iterations so styling is correct
+		$number_of_subjects = count($subjects); //used to keep track of loop iterations so styling is correct
+
 		if( !empty($subjects)):
 			foreach($subjects as $subject) : ?>
 
@@ -29,10 +31,12 @@
 					//to work.
 					$termID = $subject->term_id;
 					$termLinks = get_term_link($termID, 'subject');
+					$postTypeLink = "?post_type=still_image";
+					$subjectPermalink = $termLinks . $postTypeLink;
 					$counter++;
 				?>
 				<div class="grid-4">
-					<a href="<?php echo $termLinks; ?>">	
+					<a href="<?php echo $subjectPermalink; ?>">	
 						<?php echo $subject->name; ?>
 					</a> 
 				</div>
@@ -46,7 +50,7 @@
 		
 	?>
 
-</div> <!-- close grid-container div -->
+</div>
 
 	<?php 
 		$args = array(
