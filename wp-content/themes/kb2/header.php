@@ -23,7 +23,7 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class( 'cbp-spmenu-push' ); ?>>
 
 		<!-- wrapper -->
 		<div class="wrapper">
@@ -31,9 +31,7 @@
 			<!-- header -->
 			<div class='headerBack'>
 				<header class="main-header container" role="banner">
-					<nav id="nav-main" role="navigation">
-						<?php kb2_nav(); ?>
-					</nav>
+					
 					<!-- logo -->
 					<a href="<?php echo home_url(); ?>">
 					<div class='main-logo'>
@@ -52,7 +50,17 @@
 						<?php kb2_nav(); ?>
 					</nav>
 					<!-- /nav -->
+					<div id="nav-icon1">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+
+					
 
 			</header>
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+						<?php kb2_nav(); ?>
+					</nav>
 			</div>
 			<!-- /header -->
