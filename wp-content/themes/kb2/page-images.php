@@ -3,6 +3,7 @@
 	<h1><?php the_title(); ?></h1>
 </div>
 <div class="grid-container">
+
 	<?php
 
 		$subjects = $wpdb->get_results(
