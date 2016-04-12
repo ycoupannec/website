@@ -1,17 +1,7 @@
 <?php get_header(); ?>
 
-<div class='grid-container'>
+<div class="grid-container">
 
-	<?php
-
-		$args = array(
-			'post_type' => 'home_page'
-		);
-		$front_page = get_posts( $args );
-
-	?>
-
-	<?php foreach($front_page as $post) : ?> 
 		
 		<?php
 			$images = get_field( 'images' ); ?>
@@ -41,7 +31,7 @@
 		 	</a>
 			</div>
 			
-		</div><div class='grid-container'>
+		</div><div class="grid-container">
 
 		<?php 
 			$films = get_field('films'); ?>
@@ -60,9 +50,6 @@
 		 		<p><?php echo $audio[0]['audio_blurb']; ?></p>
 			</div>
 			
-			
-	
-	<?php endforeach; ?>
 
 
 </div>
