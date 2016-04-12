@@ -60,10 +60,7 @@
 		 		<p><?php echo $audio[0]['audio_blurb']; ?></p>
 			</div>
 			
-			
-	
 	<?php endforeach; ?>
-
 
 </div>
 
