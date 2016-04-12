@@ -3,64 +3,67 @@
 <div class='grid-container'>
 
 	<?php
+
 		$args = array(
-			'post_type' => 'still_image',
-			'posts_per_page' => 1
+			'post_type' => 'home_page'
 		);
-		$imagePost = get_posts( $args );
-		//print_r($imagePost);
+		$front_page = get_posts( $args );
 
 	?>
-	
-	<?php if( !empty( $imagePost ) ) : ?>
+
+	<?php foreach($front_page as $post) : ?> 
 		
-		<div class='grid-4'>
-		<?php foreach( $imagePost as $image ) : ?>
-			<a href='<?php echo get_permalink($image->ID); ?>'>
-				<h3><?php echo $image->post_title; ?></h3>
-			</a>
-		<?php endforeach; ?> <!-- end foreach -->
-		</div>
-
-	<?php endif; ?> <!-- endif -->
-
-	<?php
-		$args = array(
-			'post_type' => 'person',
-			'posts_per_page' => 1
-		);
-		$personPost = get_posts( $args );
-	?>
-
-	<?php if( !empty( $personPost ) ) : ?>
-		
-		<div class='grid-4'>
-		<?php foreach( $personPost as $person ) : ?>
-			<a href='<?php echo get_permalink($person->ID); ?>'>
-				<h3><?php echo $person->post_title; ?></h3>
-			</a>
-		<?php endforeach; ?> <!-- end foreach -->
-		</div>
+		<?php
+			$images = get_field( 'images' ); ?>
+			<div class='grid-4'>
+			 <a href="<?php echo get_permalink(51366); ?>">
+			 <img src="<?php echo $images[0]['images_thumbnail']['sizes']['thumbnail']; ?>" alt="<?php echo $images[0]['images_thumbnail']['alt'] ?>" />
+			 <p><?php echo $images[0]['images_blurb']; ?></p>
+			 </a>
+			</div>
 	
-	<?php endif; ?> <!-- endif -->
 
-	<?php
-		$args = array(
-			'post_type' => 'video',
-			'posts_per_page' => 1
-		);
-		$videoPost = get_posts( $args );
-	?>
+		<?php 
+			$publications = get_field( 'publications' ); ?>
+			<div class='grid-4'>
+			<a href="<?php echo get_permalink(113036); ?>">
+				<img src="<?php echo $publications[0]['publications_image']['sizes']['thumbnail']; ?>" alt="<?php echo $publications[0]['publications_image']['alt'] ?>" />
+		 		<p><?php echo $publications[0]['publications_blurb']; ?></p>
+		 	</a>
+			</div>
 
-	<?php if( !empty( $videoPost ) ) : ?>
-		<div class='grid-4'>
-			<?php foreach( $videoPost as $video ) : ?>
-				<a href='<?php echo get_permalink($video->ID); ?>'>
-				<h3><?php echo $video->post_title; ?></h3>
-			</a>
-			<?php endforeach; ?> 
-		</div>
-	<?php endif; ?>		
+		<?php 
+			$people = get_field('people'); ?>
+			<div class='grid-4'>
+			<a href="<?php echo get_permalink(51040); ?>">
+				<img src="<?php echo $people[0]['people_image']['sizes']['thumbnail']; ?>" alt="<?php echo $people[0]['people_image']['alt'] ?>" />
+		 		<p><?php echo $people[0]['people_blurb']; ?></p>
+		 	</a>
+			</div>
+			
+		</div><div class='grid-container'>
+
+		<?php 
+			$films = get_field('films'); ?>
+			<div class='grid-4'>
+			<a href="<?php echo get_permalink(113038); ?>">
+				<img src="<?php echo $films[0]['films_image']['sizes']['thumbnail']; ?>" alt="<?php echo $films[0]['films_image']['alt'] ?>" />
+		 		<p><?php echo $films[0]['films_blurb']; ?></p>
+		 	</a>
+			</div>
+		
+		<?php 
+			$audio = get_field('audio'); ?>
+			
+			<div class='grid-4'>
+				<img src="<?php echo $audio[0]['audio_image']['sizes']['thumbnail']; ?>" alt="<?php echo $audio[0]['audio_image']['alt'] ?>" />
+		 		<p><?php echo $audio[0]['audio_blurb']; ?></p>
+			</div>
+			
+			
+	
+	<?php endforeach; ?>
+
 
 </div>
 
