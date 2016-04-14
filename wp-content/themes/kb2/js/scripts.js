@@ -18,6 +18,18 @@
 	        }
     	});
 
+
 	});
+
+	    	//flexslider
+		$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide",
+		    prevText: "",
+			nextText: "",		    
+		  });
+
+		  console.log($.flexslider)
+		});    	
 	
 })(jQuery, this);

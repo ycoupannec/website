@@ -1,5 +1,41 @@
 <?php get_header();  ?>
 
+
+
+<?php $slides = get_field('slider'); ?>
+
+<?php if(!empty($slides)): ?>
+
+	<div class="flexslider">
+
+		<ul class="slides">
+
+		<?php foreach($slides as $slide): ?>
+
+			<li>
+
+				<?php
+					//get our href - it's either a permalink from a post object or a string from a text field, depending on what link_type is set to
+					$link = ( $slide['link_type'] == 'internal' ? get_permalink($slide['internal']->ID) : $slide['external'] );
+				?>
+
+				<a href="<?php echo $link; ?>" <?php if($slide['new_window'] == 1) echo 'target="_blank"'; ?>>
+					<img src="<?php echo $slide['image']['sizes']['1200w']; ?>" alt="<?php echo $slide['image']['alt'] ?>" />
+				</a>
+
+			</li>
+
+		<?php endforeach; ?>
+
+		</ul>
+
+	</div>
+
+<?php endif; ?>
+
+
+
+
 <div class="grid-container">
 		
 	<?php
