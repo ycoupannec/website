@@ -19,7 +19,7 @@
 			endforeach;
 
 		endif;
-		
+
 	?>
 
 </div>
