@@ -6,7 +6,8 @@
 
 <?php if(!empty($slides)): ?>
 
-	<div class="flexslider">
+<div class='grid-container'>
+	<div class="flexslider grid-12">
 
 		<ul class="slides">
 
@@ -30,11 +31,8 @@
 		</ul>
 
 	</div>
-
+</div>
 <?php endif; ?>
-
-
-
 
 <div class="grid-container">
 		
