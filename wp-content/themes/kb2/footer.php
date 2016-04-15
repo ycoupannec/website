@@ -1,14 +1,24 @@
 			<!-- footer -->
+			<div class='headerBack'>
 			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. 
-					
-				</p>
-				<!-- /copyright -->
-
+				<div class='grid-container'>
+					<div class="grid-6">
+					<!-- copyright -->
+					<p class="copyright">
+						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. 
+						
+					</p>
+					<!-- /copyright -->
+					</div>
+					<div class="grid-6">
+						<p>The Hawke's Bay Knowledge Bank</p>
+						<p>10am to 5pm, Monday to Friday</p>
+						<p>901 Omahu Road, Hastings</p>
+						<p>Ph: (06) 833-5333</p>
+					</div>
+				</div>
 			</footer>
+			</div>
 			<!-- /footer -->
 
 		</div>
