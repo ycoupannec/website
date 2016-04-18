@@ -5,7 +5,6 @@
 <?php $slides = get_field('slider'); ?>
 
 <?php if(!empty($slides)): ?>
-
 	<div class="flexslider">
 
 		<ul class="slides">
@@ -21,6 +20,9 @@
 
 				<a href="<?php echo $link; ?>" <?php if($slide['new_window'] == 1) echo 'target="_blank"'; ?>>
 					<img src="<?php echo $slide['image']['sizes']['1200w']; ?>" alt="<?php echo $slide['image']['alt'] ?>" />
+					<?php if(!empty($slide['caption'])): ?>
+					<div class="caption"><?php echo $slide['caption']; ?></div>
+					<?php endif; ?>
 				</a>
 
 			</li>
@@ -30,11 +32,10 @@
 		</ul>
 
 	</div>
+<div class="grid-container">
 
+</div>
 <?php endif; ?>
-
-
-
 
 <div class="grid-container">
 		
@@ -45,7 +46,7 @@
 
 			foreach($landingpages as $page): ?>
 
-				<div class="grid-4">
+				<div class="grid-3">
 					<a href="<?php echo get_permalink($page['landing_page']->ID); ?>"><img src="<?php echo $page['image']['sizes']['300w']; ?>" alt="<?php echo $page['image']['alt'] ?>" /></a>	
 					<h3><?php echo $page['landing_page']->post_title; ?></h3>
 					<p><?php echo $page['blurb']; ?></p>						

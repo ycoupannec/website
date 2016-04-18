@@ -74,11 +74,11 @@ html[xmlns] .flexslider .slides {
  * ====================================================================================================================*/
 .flexslider {
   margin: 0 auto;
-  max-width:1200px;
-  max-height: 500px;
+  max-width:1400px;  
+
   overflow:hidden;
   background: #ffffff;
-  border: 4px solid #ffffff;
+
   position: relative;
   zoom: 1;
   -webkit-border-radius: 4px;

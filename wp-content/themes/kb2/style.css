@@ -246,6 +246,25 @@ a img.aligncenter {
 
 }
 
+.flex-active-slide { position:relative;}
+.flexslider .caption {
+
+	    background-color: rgba(200,200,200,0.8);
+	    color:#000;
+	    position:absolute;
+	    bottom: 0;
+	    right:50px;
+	    padding:30px;
+
+}
+.flexslider .slides .caption img {height:auto; width: auto;}
+
+@media only screen and (max-width:480px) {
+
+	.flexslider .caption { width:100%; height:100%; right:0; position:relative; padding:10px;}
+
+}
+
 /*------------------------------------*\
     PRINT
 \*------------------------------------*/
@@ -375,6 +394,8 @@ a {
 	display: inline-block;
 	text-align: left;
 	vertical-align: top;
+	padding-top: 22px;
+    padding-left: 20px;
 }
 
 .byline h1 {
@@ -983,55 +1004,6 @@ footer {
 	color: #A6D785;
 }
 
-.cbp-spmenu {
-	background: #47a3da;
-	position: fixed;
-}
-
-.cbp-spmenu h3 {
-	color: #afdefa;
-	font-size: 1.9em;
-	padding: 20px;
-	margin: 0;
-	font-weight: 300;
-	background: #0d77b6;
-}
-
-.cbp-spmenu a {
-	display: block;
-	color: #fff;
-	font-size: 1.1em;
-	font-weight: 300;
-}
-
-.cbp-spmenu a:hover {
-	background: #258ecd;
-}
-
-.cbp-spmenu a:active {
-	background: #afdefa;
-	color: #47a3da;
-}
-
-.cbp-spmenu-vertical {
-	width: 240px;
-	height: 100%;
-	top: 0;
-	z-index: 1000;
-}
-
-.cbp-spmenu-vertical a {
-	border-bottom: 1px solid #258ecd;
-	padding: 1em;
-}
-
-.cbp-spmenu-left {
-	left: -240px;
-}
-
-.cbp-spmenu-left.cbp-spmenu-open {
-	left: 0px;
-}
 
 /* Media Queries
 ---------------------------------*/
@@ -1169,6 +1141,59 @@ footer {
 		transform: rotate(-135deg);
 	}
 
+	.overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba(119,136,153, 0.8);
+		overflow: auto;
+		font-family: 'Merriweather', sans-serif;
+		text-align: center;
+		margin-top: 0 auto;
+		z-index: 100;
+	}
+
+	.overlay ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		display: block;
+		height: 100%;
+		position: relative;
+		font-size: 1.2em;
+		width: 100%;
+		padding-top: 10%;
+		text-align: center;
+	}
+
+	.overlay ul li {
+		display: block;
+		min-height: 54px;
+		margin: 8px auto;
+	}
+
+	.overlay ul li a {
+		display: block;
+		color: #fff;
+		text-decoration: none;
+		width: 100%;
+	}
+
+	.overlay ul li:last-child {
+		margin-right: 0;
+	}
+
+	.overlay ul li a:hover,
+	.overlay ul li a:focus {
+		color: #183a8b;
+		background: white;
+		width: 100%;
+		cursor: pointer;
+	}
+
 }
 
 @media all and (max-width: 1120px) {
@@ -1189,6 +1214,10 @@ footer {
 
 	.main-nav {
 		text-align: right;
+	}
+
+	.overlay ul {
+		display: none;
 	}
 
 	.chckBoxBreak {
