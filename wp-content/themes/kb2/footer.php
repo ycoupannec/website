@@ -1,8 +1,8 @@
 			<!-- footer -->
 			<div class='headerBack'>
-			<footer class="footer" role="contentinfo">
+			<footer class="main-footer" role="contentinfo">
 				<div class='grid-container'>
-					<div class="grid-6">
+					<div class="grid-4">
 					<!-- copyright -->
 					<p class="copyright">
 						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. 
@@ -10,11 +10,18 @@
 					</p>
 					<!-- /copyright -->
 					</div>
-					<div class="grid-6">
+					<div class="grid-4">
 						<p>The Hawke's Bay Knowledge Bank</p>
 						<p>10am to 5pm, Monday to Friday</p>
 						<p>901 Omahu Road, Hastings</p>
 						<p>Ph: (06) 833-5333</p>
+					</div>
+					<div class="grid-4">
+						<p>Friends of the Knowledge Bank</p>
+						<p>NZ History</p>
+						<p>Papers Past</p>
+						<p>Te Ara</p>
+						<p>National Library</p>
 					</div>
 				</div>
 			</footer>
