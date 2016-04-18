@@ -55,12 +55,13 @@
 						<span></span>
 						<span></span>
 					</div>
+					<div class='overlay'>
+						<?php kb2_nav(); ?>
+					</div>
 
 					
 
 			</header>
-			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-						<?php kb2_nav(); ?>
-					</nav>
+			
 			</div>
 			<!-- /header -->

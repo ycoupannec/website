@@ -6,6 +6,12 @@
 		
 		// DOM ready, take it away
 		
+		$('#nav-icon1').click(function(){
+	        $(this).toggleClass('open');
+	        $('.overlay').fadeToggle(250);
+	        return false;
+    	});
+
 		var  nm = $("#nav-main");
       	var nms = "nav-main-scrolled";
       	var hdr = $('header').height();
