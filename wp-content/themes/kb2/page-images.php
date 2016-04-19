@@ -19,7 +19,7 @@
 		);
 
 		$counter = 0; //used to keep track of loop iterations so styling is correct
-		$number_of_subjects = count($subjects); //used to keep track of loop iterations so styling is correct
+		$number_of_subjects = count($subjects); // 
 
 		if( !empty($subjects)):
 			foreach($subjects as $subject) : ?>
