@@ -26,7 +26,7 @@
 
 								<?php if(isset($image['sizes']['700w'])): ?>
 
-									<img src="<?php echo $image['sizes']['700w']; ?>" />
+									<a href="<?php echo get_term_link($year->term_id); ?>"><img src="<?php echo $image['sizes']['700w']; ?>" /></a>
 
 								<?php endif; ?>
 
