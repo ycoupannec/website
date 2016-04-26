@@ -1285,11 +1285,10 @@ footer {
 .tiles { display: block; box-sizing: border-box;  max-width:1200px; margin:0 auto;}
 
 .tiles .tile { 
-	display:block;  
+	display:inline-block;  
 	margin:0; 
 	padding:20px; 	
 	width:33%;
-	float:left;	
 }
 
 .tiles .tile .inner {
