@@ -1353,7 +1353,6 @@ footer {
 	text-align: center;
 }
 
-
 .pagination .page-numbers {
 	line-height: 3.2em;
 	padding: 0 0.6667em;
@@ -1367,8 +1366,6 @@ footer {
 	display: inline-block;
 	font-weight: 700;
 }
-
-
 
 .pagination .prev:before,
 .pagination .next:before {
@@ -1384,7 +1381,12 @@ footer {
 	text-decoration:underline;
 }
 
-
+.view_button {
+	color: #fff;
+	background: #3079AB;
+	padding: 8px 20px;
+	border-radius: 4px;
+}
 
 
 

@@ -40,21 +40,29 @@
 				</div>
 
 				<div class='grid-6'>
+					
 					<h3>Born:</h3><p><?php the_field( 'birthdate' ); ?></p>
 					
-					</div>
-					<div class='grid-6'>
+				</div>
+					
+				<div class='grid-6'>
+					
 					<?php if( have_rows( 'children' ) ): ?>
+						
 						<h3>Children:</h3>
-							<?php while( have_rows( 'children' ) ) : the_row();
-								//vars 
-								$first_name = get_sub_field( 'first_name' );
-								$middle_names = get_sub_field( 'middle_names' );
-								$family_name = get_sub_field( 'family_name' );
-							?>
-							<p class='children'><?php echo $first_name . " " . $middle_names . " " . $family_name; ?></p>
-						<?php endwhile; endif; ?>
-					</div>
+						
+						<?php while( have_rows( 'children' ) ) : the_row();
+							//vars 
+							$first_name = get_sub_field( 'first_name' );
+							$middle_names = get_sub_field( 'middle_names' );
+							$family_name = get_sub_field( 'family_name' );
+						?>
+						
+						<p class='children'><?php echo $first_name . " " . $middle_names . " " . $family_name; ?></p>
+					
+					<?php endwhile; endif; ?>
+				
+				</div>
 					<h3>Related material:</h1><a href="#">Title of article</a>
 				
 			</div>	

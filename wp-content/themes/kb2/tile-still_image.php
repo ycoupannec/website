@@ -18,9 +18,7 @@
 
 		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
 		<p><?php echo $post->post_type; ?></p>
-		<form action="<?php echo get_permalink($post->ID); ?>">
-    		<input type="submit" value="View">
-		</form>
+		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
 	</div>
 	
 </article>

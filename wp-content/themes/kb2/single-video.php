@@ -40,7 +40,7 @@
 										<h3>Collections</h3>
 										<ul>
 											<?php foreach( $collections as $collection ): ?>
-												<li><?php echo $collection->name; ?></li>
+												<li><a href="<?php echo get_term_link($collection->term_id); ?>" class="term collection"><?php echo $collection->name; ?></a></li>
 											<?php endforeach; ?>
 										</ul>
 									<?php endif;
@@ -48,12 +48,12 @@
 
 								<?php
 									$tags = get_field( 'tags' );
-									print_r($tags);
+									//print_r($tags);
 									if( !empty($tags) ): ?>
 									<h3>Tags</h3>
 									<ul>
 										<?php foreach ($tags as $tag): ?>
-											<li><?php echo $tag->name; ?></li>
+											<li><a href="<?php echo get_term_link($tag->term_id); ?>" class="term tag"><?php echo $tag->name; ?></a></li>
 										<?php endforeach; ?>
 									</ul>
 									<?php endif;
@@ -66,7 +66,7 @@
 									<h3>Subjects</h3>
 									<ul>
 										<?php foreach ( $subjects as $subject ): ?> 
-											<li><?php echo $subject->name; ?></li>
+											<li><a href="<?php echo get_term_link($subject->term_id); ?>" class="term subject"><?php echo $subject->name; ?></a></li>
 										<?php endforeach; ?>
 									</ul>
 									<?php endif;

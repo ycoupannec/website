@@ -36,7 +36,7 @@
 						<?php 
 							
 							$collections = get_field( 'collections' ); 
-							print_r($collections); 
+							//print_r($collections); 
 
 							if( !empty($collections) ):
 								foreach($collections as $collection): ?>
@@ -75,12 +75,11 @@
 					//trying to echo out the subjects for an individual image.
 					//Not sure where I'm going wrong here. I referenced
 					//http://www.advancedcustomfields.com/resources/taxonomy/ 
-						$terms = get_field('subjects');
-						if( $terms ): ?>
+						$subjects = get_field('subjects');
+						if( !empty($subjects) ): ?>
 							<ul>
-							<?php foreach( $terms as $term ): ?>
-								<p><?php echo $term->name; ?></p>
-								<p><?php //echo $term->description; ?></p>
+							<?php foreach( $subjects as $subject ): ?>
+								<li><a href="<?php echo get_term_link($subject->term_id); ?>" class="term subject"><?php echo $subject->name; ?></a></li>
 							<?php endforeach; ?>
 						</ul>
 					<?php endif; ?>
