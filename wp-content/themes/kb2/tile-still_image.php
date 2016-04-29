@@ -18,10 +18,8 @@
 
 		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
 		<p><?php echo $post->post_type; ?></p>
-		<div class='link_box'>
-			<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
-			<p class='lightbox_icon'></p>
-		</div>
+		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
+		<p class='lightbox_icon'></p>
 	</div>
 	
 </article>

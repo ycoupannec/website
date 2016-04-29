@@ -8,7 +8,7 @@
 
 		<?php if(isset($images[0]['image']['sizes']['700w'])): ?>
 
-			<img src="<?php echo $images[0]['image']['sizes']['700w']; ?>" />
+			<a href="<?php the_permalink(); ?>"><img src="<?php echo $images[0]['image']['sizes']['700w']; ?>" /></a>
 
 		<?php endif; ?>
 
@@ -18,7 +18,8 @@
 
 		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
 		<p><?php echo $post->post_type; ?></p>
-
+		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
+		<p class='lightbox_icon'></p>
 	</div>
 	
 </article>

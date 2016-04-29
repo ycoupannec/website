@@ -1384,10 +1384,15 @@ footer {
 .view_button {
 	display: inline-block;
 	color: #fff;
-	background: #3079AB;
+	background: #3f8abf;
 	padding: 8px 20px;
 	border-radius: 4px;
 	vertical-align: middle;
+}
+
+.view_button:hover {
+	background: #3079AB;
+	color: #fff;
 }
 
 .lightbox_icon {
