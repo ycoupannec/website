@@ -12,17 +12,13 @@
 			<div class="grid-container">
 				<div class='grid-6'>
 				<!-- post title -->
-				<h3>Publication Date:</h3>
-				<?php
-					
-					$publication_year = get_field('yearpublished');
+				<?php $images = get_field('images'); ?>
 
-					if(!empty($publication_year)):
-						
-						echo $publication_year;
-					
-					endif;
-				
+					<?php if(isset($images[0]['image']['sizes']['700w'])): ?>
+
+						<img src="<?php echo $images[0]['image']['sizes']['700w']; ?>" />
+
+					<?php endif; 
 				?>
 					
 				</div>
@@ -91,6 +87,19 @@
 				</div>
 					
 				<div class='grid-3'>
+
+					<h3>Publication Date:</h3>
+					<?php
+						
+						$publication_year = get_field('yearpublished');
+
+						if(!empty($publication_year)):
+							
+							echo $publication_year;
+						
+						endif;
+					
+					?>
 
 					<?php 
 						

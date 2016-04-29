@@ -21,8 +21,13 @@
 			<?php $image = get_field('images'); ?>
 				<a href="<?php echo get_permalink(); ?>">
 					<img src="<?php echo $image[0]['image']['sizes']['thumbnail']; ?>">
-					<?php the_title(); ?>
 				</a>
+				<div class="inner">
+
+		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
+		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
+		<p class='lightbox_icon'></p>
+	</div>
 			</div>
 			<?php $blog_count = $maps->current_post+1; ?>
      		<?php if ( $blog_count % 3 == 0 && $blog_count != $maps->post_count) : ?>
