@@ -1382,10 +1382,23 @@ footer {
 }
 
 .view_button {
+	display: inline-block;
 	color: #fff;
 	background: #3079AB;
 	padding: 8px 20px;
 	border-radius: 4px;
+	vertical-align: middle;
+}
+
+.lightbox_icon {
+	display: inline-block;
+	font-size: 0;
+	width: 25px;
+	height: 25px;
+	background: #f8f8f8 url('img/search.png') no-repeat center;
+	background-size: cover;
+	vertical-align: middle;
+	margin-left: 45%;
 }
 
 

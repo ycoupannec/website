@@ -12,7 +12,18 @@
 			<div class="grid-container">
 				<div class='grid-6'>
 				<!-- post title -->
+				<h3>Publication Date:</h3>
+				<?php
+					
+					$publication_year = get_field('yearpublished');
+
+					if(!empty($publication_year)):
+						
+						echo $publication_year;
+					
+					endif;
 				
+				?>
 					
 				</div>
 					
