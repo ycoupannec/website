@@ -46,7 +46,7 @@
 					<!-- /logo -->
 
 					<!-- nav -->
-					<nav id="nav-main" role="navigation">
+					<nav id="nav-main" class='link-hover' role="navigation">
 						<?php kb2_nav(); ?>
 					</nav>
 					<!-- /nav -->

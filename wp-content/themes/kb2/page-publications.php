@@ -36,7 +36,7 @@
 					$subjectPermalink = $termLinks . $postTypeLink;
 					$counter++;
 				?>
-				<div class="grid-4">
+				<div class="grid-4 link-hover">
 					<a href="<?php echo $subjectPermalink; ?>">	
 						<?php echo $subject->name; ?>
 					</a> 

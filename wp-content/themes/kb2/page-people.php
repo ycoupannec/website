@@ -8,7 +8,7 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/img/sliderImg.jpg" />
 			</div>
 
-	<ul class='namesList peopleList'>
+	<ul class='namesList link-hover peopleList'>
 
 		<li><a href='people?letter=a'>A</a></li>
 		<li><a href='people?letter=b'>B</a></li>

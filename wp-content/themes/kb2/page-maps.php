@@ -18,16 +18,15 @@
 	<div class='grid-container'>
 		<?php if ( $maps->have_posts() ) : while ( $maps->have_posts() ) : $maps->the_post(); ?>
 			<div class='grid-4'>
-			<?php $image = get_field('images'); ?>
+				<?php $image = get_field('images'); ?>
 				<a href="<?php echo get_permalink(); ?>">
 					<img src="<?php echo $image[0]['image']['sizes']['thumbnail']; ?>">
 				</a>
 				<div class="inner">
-
-		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
-		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
-		<p class='lightbox_icon'></p>
-	</div>
+					<h2 class='link-hover'><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
+					<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
+					<p class='lightbox_icon'></p>
+				</div>
 			</div>
 			<?php $blog_count = $maps->current_post+1; ?>
      		<?php if ( $blog_count % 3 == 0 && $blog_count != $maps->post_count) : ?>
