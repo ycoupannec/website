@@ -586,7 +586,6 @@ footer {
 }
 
 .main-footer {
-	margin-top: 30px;
 	padding: 20px 0 30px;
 	background: #e5e5ff; 
 	/*background: rgba(245, 255, 250, 1);*/
@@ -701,6 +700,7 @@ footer {
 .namesList li,
 .peopleBySecond li {
 	display: inline-block;
+	vertical-align: center;
 	padding: 0;
 	margin: 0;
 }
@@ -720,8 +720,8 @@ footer {
 .peopleBySecond a {
 	text-decoration: none;
 	color: black;
-	display: block;
-	width: 15px;
+	display: inline-block;
+	padding: 25px;
 }
 
 .peopleBySecond li {
@@ -763,7 +763,6 @@ footer {
 }
 
 .audio-img {
-	
 	float: left;
 	margin: 0 15px 0;
 	width: 75%;
@@ -804,8 +803,6 @@ footer {
 .newsSubscribe {
 	width: 32.5em;
 }
-
-
 
 .search-input,
 .footerSearch {
@@ -1426,6 +1423,23 @@ footer {
 	margin-left: 45%;
 }
 
+.social-icon {
+	display: inline-block;
+	font-size: 0;
+	width: 35px;
+	height: 35px;
+	background: url('img/facebook.png') no-repeat center;
+	background-size: 100% 100%;
+	vertical-align: middle;
+}
+
+.bottom-margin {
+	margin-bottom: 30px;
+}
+
+.top-padding {
+	padding-top: 40px;
+}
 
 
 

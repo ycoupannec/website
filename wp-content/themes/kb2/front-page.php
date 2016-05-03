@@ -32,12 +32,9 @@
 		</ul>
 
 	</div>
-<div class="grid-container">
-
-</div>
 <?php endif; ?>
 
-<div class="grid-container">
+<div class="grid-container bottom-margin top-padding">
 		
 	<?php
 		$landingpages = get_field('content_landing_pages');

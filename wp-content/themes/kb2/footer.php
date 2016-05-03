@@ -8,6 +8,7 @@
 						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. 
 						
 					</p>
+					<p class='social-icon'><p>
 					<!-- /copyright -->
 					</div>
 					<div class="grid-4">

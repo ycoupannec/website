@@ -86,7 +86,7 @@
 					
 				</div>
 				<div class='grid-3'>
-					<h3>Format of the origianl:</h3><p><?php the_field( 'format_original' ); ?></p>
+					<h3>Format of the original:</h3><p><?php the_field( 'format_original' ); ?></p>
 					<h3>Location</h3><p><?php the_field( 'location' ); ?></p>
 					<?php 
 						$file = get_field('master');

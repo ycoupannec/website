@@ -23,7 +23,7 @@
 					<img src="<?php echo $image[0]['image']['sizes']['thumbnail']; ?>">
 				</a>
 				<div class="inner">
-					<h2 class='link-hover'><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
+					<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
 					<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
 					<p class='lightbox_icon'></p>
 				</div>

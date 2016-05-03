@@ -73,6 +73,7 @@ img {
 	.grid-1 {
 		width: 6.5%;
 	}
+
 	.grid-2 {
 		width: 15%;
 	}
@@ -106,6 +107,17 @@ img {
 	.grid-12 {
 		width: 100%;
 	}
+
+	.col-1-8 {
+		width: 10.75%;
+	}
+
+	.col-1-8 a {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 auto; 
+	}
+
 
 	/* Clearfix
 	================================ */

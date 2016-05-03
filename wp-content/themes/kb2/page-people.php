@@ -8,34 +8,44 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/img/sliderImg.jpg" />
 			</div>
 
-	<ul class='namesList link-hover peopleList'>
+	<ul class='grid-container namesList link-hover peopleList'>
 
-		<li><a href='people?letter=a'>A</a></li>
-		<li><a href='people?letter=b'>B</a></li>
-		<li><a href='people?letter=c'>C</a></li>
-		<li><a href='people?letter=d'>D</a></li>
-		<li><a href='people?letter=e'>E</a></li>
-		<li><a href='people?letter=f'>F</a></li>
-		<li><a href='people?letter=g'>G</a></li>
-		<li><a href='people?letter=h'>H</a></li>
-		<li><a href='people?letter=i'>I</a></li>
-		<li><a href='people?letter=j'>J</a></li>
-		<li><a href='people?letter=k'>K</a></li>
-		<li><a href='people?letter=l'>L</a></li>
-		<li><a href='people?letter=m'>M</a></li>
-		<li><a href='people?letter=n'>N</a></li>
-		<li><a href='people?letter=o'>O</a></li>
-		<li><a href='people?letter=p'>P</a></li>
-		<li><a href='people?letter=q'>Q</a></li>
-		<li><a href='people?letter=r'>R</a></li>
-		<li><a href='people?letter=s'>S</a></li>
-		<li><a href='people?letter=t'>T</a></li>
-		<li><a href='people?letter=u'>U</a></li>
-		<li><a href='people?letter=v'>V</a></li>
-		<li><a href='people?letter=w'>W</a></li>
-		<li><a href='people?letter=x'>X</a></li>
-		<li><a href='people?letter=y'>Y</a></li>
-		<li><a href='people?letter=z'>Z</a></li>
+		<li class='col-1-8'><a href='people?letter=a'>A</a></li>
+		<li class='col-1-8'><a href='people?letter=b'>B</a></li>
+		<li class='col-1-8'><a href='people?letter=c'>C</a></li>
+		<li class='col-1-8'><a href='people?letter=d'>D</a></li>
+		<li class='col-1-8'><a href='people?letter=e'>E</a></li>
+		<li class='col-1-8'><a href='people?letter=f'>F</a></li>
+		<li class='col-1-8'><a href='people?letter=g'>G</a></li>
+		<li class='col-1-8'><a href='people?letter=h'>H</a></li>
+	</ul>
+		
+	<ul class='grid-container namesList link-hover peopleList'>
+		<li class='col-1-8'><a href='people?letter=i'>I</a></li>
+		<li class='col-1-8'><a href='people?letter=j'>J</a></li>
+		<li class='col-1-8'><a href='people?letter=k'>K</a></li>
+		<li class='col-1-8'><a href='people?letter=l'>L</a></li>
+		<li class='col-1-8'><a href='people?letter=m'>M</a></li>
+		<li class='col-1-8'><a href='people?letter=n'>N</a></li>
+		<li class='col-1-8'><a href='people?letter=o'>O</a></li>
+		<li class='col-1-8'><a href='people?letter=p'>P</a></li>
+	</ul>
+
+	<ul class='grid-container namesList link-hover peopleList'>
+		
+		<li class='col-1-8'><a href='people?letter=q'>Q</a></li>
+		<li class='col-1-8'><a href='people?letter=r'>R</a></li>
+		<li class='col-1-8'><a href='people?letter=s'>S</a></li>
+		<li class='col-1-8'><a href='people?letter=t'>T</a></li>
+		<li class='col-1-8'><a href='people?letter=u'>U</a></li>
+		<li class='col-1-8'><a href='people?letter=v'>V</a></li>
+		<li class='col-1-8'><a href='people?letter=w'>W</a></li>
+		<li class='col-1-8'><a href='people?letter=x'>X</a></li>
+	</ul>
+	
+	<ul class='grid-container namesList link-hover peopleList'>
+		<li class='col-1-8'><a href='people?letter=y'>Y</a></li>
+		<li class='col-1-8'><a href='people?letter=z'>Z</a></li>
 	</ul>
 
 
