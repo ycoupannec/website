@@ -34,7 +34,48 @@
 	</div>
 <?php endif; ?>
 
-<div class="grid-container bottom-margin top-padding">
+<div class="grid-container  top-padding">
+
+	<div class="grid-6">
+		<h3>The Hawke's Bay Knowledge Bank is a voluntary organisation based in Hastings, New Zealand.</h3>
+		<p>Everything you see on the website has been collated, edited, and put together by members of the community who want to preserve the history of their region digitally, before physical records disappear in the ether of time. <a href="/about">Read more</a></p>
+
+	</div>
+
+	<div class="grid-6">
+
+		<div class="homesearch">
+
+			<form action="/" method="get" class="searchBar">
+
+				<input class="search" type="text" placeholder="Search for a name, place or subject" required="" value="">
+				<input class="button" type="button" value="Search">
+
+			</form>
+
+			<p>or try our <a href="/search">Advanced Search</a> page.</p>
+
+
+
+		</div>
+
+
+	</div>
+
+
+</div>	
+
+<div class="grid-container">
+
+	<div class="grid-12 centerheading">
+
+		<h2>Explore</h2>
+
+	</div>
+
+</div>	
+
+<div class="grid-container bottom-margin ">
 		
 	<?php
 		$landingpages = get_field('content_landing_pages');
