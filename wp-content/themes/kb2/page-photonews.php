@@ -2,6 +2,15 @@
 
 		<div class="pageTitles">
 			<h1><?php the_title(); ?></h1>
+			<?php 
+
+				if (have_posts()) : while (have_posts()) : the_post();
+
+					the_content();
+
+				endwhile; endif; 
+
+			?>			
 		</div>
 		
 		<section class="tiles years">
@@ -34,7 +43,8 @@
 
 							<div class="inner">
 
-								<h2><a href="<?php echo get_term_link($year->term_id); ?>"><?php echo $year->name; ?></a></h2>								
+								<h2><a href="<?php echo get_term_link($year->term_id); ?>"><?php echo $year->name; ?></a></h2>
+								<p><?php echo $year->count; ?> items</p>								
 
 							</div>
 							

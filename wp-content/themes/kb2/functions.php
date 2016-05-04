@@ -1,7 +1,7 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
- *  URL: kb2.com | @kb2
+ *  Author: Chris Webb / Gabriel Ward
+ *  URL: knowledgebank.org.nz
  *  Custom functions, support, custom post types and more.
  */
 
@@ -102,8 +102,10 @@ function kb2_header_scripts()
         wp_enqueue_script('flexslider');
 
         wp_register_script('kb2scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery','flexslider'), '1.0.1'); // Custom scripts
-        wp_enqueue_script('kb2scripts'); // Enqueue it
+        wp_enqueue_script('kb2scripts'); 
 
+        wp_register_script('magnificjs', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.0.1'); // Custom scripts
+        wp_enqueue_script('magnificjs'); 
                 
     }
 }
@@ -133,7 +135,10 @@ function kb2_styles()
     wp_enqueue_style('kb2'); // Enqueue it!
 
     wp_register_style('flexslidercss', get_template_directory_uri() . '/css/flexslider.css', array(), '1.0', 'all');
-    wp_enqueue_style('flexslidercss'); // Enqueue it!
+    wp_enqueue_style('flexslidercss');
+
+    wp_register_style('magnificcss', get_template_directory_uri() . '/css/magnific-popup.css', array(), '1.0', 'all');
+    wp_enqueue_style('magnificcss');    
 }
 
 // Register HTML5 Blank Navigation
@@ -458,5 +463,32 @@ function wpse200296_before_admin_bar_render() {
 
     $wp_admin_bar->remove_menu('customize');
 }
+
+
+//'Quick view' previews of text posts
+
+//allow our own get variable to be detectable with get_query_var()
+function add_query_vars_filter( $vars ){
+  $vars[] = "quickview";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+function quick_view_template($single_template) {
+
+    $quickview = get_query_var('quickview');
+
+    if($quickview != 'true') return false; //bail out, this is a regular template view
+
+    global $post;
+
+    if ($post->post_type == 'text') {
+          $single_template = dirname( __FILE__ ) . '/quickview-text.php';
+    }
+    return $single_template;
+}
+add_filter( 'single_template', 'quick_view_template' );
+
 
 ?>

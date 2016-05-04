@@ -27,15 +27,60 @@
 
 	});
 
-	    	//flexslider
-		$(window).load(function() {
-		  $('.flexslider').flexslider({
-		    animation: "slide",
-		    prevText: "",
-			nextText: "",		    
-		  });
+    //flexslider
+	$(window).load(function() {
+	  $('.flexslider').flexslider({
+	    animation: "slide",
+	    prevText: "",
+		nextText: "",		    
+	  });
 
-		  console.log($.flexslider)
-		});    	
+	  console.log($.flexslider)
+	});  
+
+
+	$(document).ready(function(){
+
+		$('a.quick_view').click(function(e){
+
+			e.preventDefault();
+
+			$a = $(this);
+
+			var items = [];
+
+			$.get( $a.attr('href'), function(data){
+
+				//console.log(data);
+
+				if( $(data).find('img').length ) {
+					
+					$(data).find('img').each(function(){
+						items.push({src: $(this).attr('src'), type : 'image' })
+					});
+				}
+				console.log(items);
+				if(items.length) {
+
+					$.magnificPopup.open({
+					   items:items,
+					   gallery: {
+					      enabled: true 
+					    }
+					});
+
+
+				}
+
+			});
+
+
+
+		});
+
+		
+
+	});
+
 	
 })(jQuery, this);

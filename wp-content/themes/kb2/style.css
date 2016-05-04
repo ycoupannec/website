@@ -1447,6 +1447,11 @@ footer {
 	text-decoration:underline;
 }
 
+.action_buttons { width:100%; display:block;}
+
+.action_buttons > span { display:inline-block; width:49%; text-align:left;}
+.action_buttons > span.quick_view { text-align:right;}
+
 .view_button {
 	display: inline-block;
 	color: #fff;
@@ -1468,9 +1473,11 @@ footer {
 	height: 25px;
 	background: #f8f8f8 url('img/search.png') no-repeat center;
 	background-size: cover;
-	vertical-align: middle;
-	margin-left: 45%;
+	vertical-align: middle;	
 }
+
+.mfp-content { max-width:60%; margin:0 auto;}
+.mfp-content img { max-width: 100%; height:auto; width:auto;}
 
 .social-icon {
 	display: inline-block;

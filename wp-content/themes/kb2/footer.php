@@ -8,7 +8,7 @@
 						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. 
 						
 					</p>
-					<p class='social-icon'><p>
+					<p><a class="social-icon" href="https://www.facebook.com/hawkesbayKnowledgeBank/" target="_blank"></a><p>
 					<!-- /copyright -->
 					</div>
 					<div class="grid-4">

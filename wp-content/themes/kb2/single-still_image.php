@@ -116,7 +116,7 @@
 			<span class="author"><?php _e( 'Published by', 'kb2' ); ?> <?php the_author_posts_link(); ?></span>
 			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'kb2' ), __( '1 Comment', 'kb2' ), __( '% Comments', 'kb2' )); ?></span>
 			<!-- /post details -->
-
+			<?php /*
 			<?php the_content(); // Dynamic Content ?>
 
 			<?php the_tags( __( 'Tags: ', 'kb2' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
@@ -128,6 +128,8 @@
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
 			<?php comments_template(); ?>
+
+			*/ ?>
 
 		</article>
 		<!-- /article -->
