@@ -32,7 +32,7 @@
 
 					<h3>Collections</h3>
 
-					<ul>
+					<ul class='image-subjects-links'>
 						<?php 
 							
 							$collections = get_field( 'collections' ); 
@@ -52,7 +52,7 @@
 
 					<h3>Tags</h3>
 					
-					<ul>
+					<ul class='image-subjects-links'>
 						<?php 
 							
 							$tags = get_field( 'tags' ); 
@@ -77,7 +77,7 @@
 					//http://www.advancedcustomfields.com/resources/taxonomy/ 
 						$subjects = get_field('subjects');
 						if( !empty($subjects) ): ?>
-							<ul>
+							<ul class='image-subjects-links'>
 							<?php foreach( $subjects as $subject ): ?>
 								<li><a href="<?php echo get_term_link($subject->term_id); ?>" class="term subject"><?php echo $subject->name; ?></a></li>
 							<?php endforeach; ?>

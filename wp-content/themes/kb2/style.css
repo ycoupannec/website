@@ -327,6 +327,7 @@ body {
 	color: #222;
 	min-height: 100%;
 	word-wrap: break-word;
+	background: #F0F0F0;
 }
 
 a {
@@ -444,8 +445,7 @@ nav#nav-main li,
 }
 
 nav#nav-main a,
-.nav-secondary a
- {
+.nav-secondary a {
     display: block;
     padding: 14px 12px; 
     text-decoration: none;
@@ -480,25 +480,43 @@ nav#nav-main a:hover {
 }
 
 .link-hover a:before {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: #000;
-		visibility: hidden;
-		-webkit-transform: scaleX(0);
-		transform: scaleX(0);
-		-webkit-transition: all 0.3s ease-in-out 0s;
-		transition: all 0.3s ease-in-out 0s;
-	}
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	visibility: hidden;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
 
-	.link-hover a:hover:before {
-		visibility: visible;
-		-webkit-transform: scaleX(1);
-		transform: scaleX();
-	}
+.link-hover a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX();
+}
+
+.image-subjects-links {
+	list-style: none;
+}
+
+.image-subjects-links a {
+	display: inline-block;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	background: #fff;
+	text-decoration: none;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+}
+
+.image-subjects-links a:hover {
+	background: #c2b280;
+}
 
 #nav-trigger {
   display: none;
