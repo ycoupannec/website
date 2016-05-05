@@ -475,11 +475,12 @@ function add_query_vars_filter( $vars ){
 add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
+
 function quick_view_template($single_template) {
 
     $quickview = get_query_var('quickview');
 
-    if($quickview != 'true') return false; //bail out, this is a regular template view
+    if($quickview != 'true') return $single_template; //bail out, this is a regular template view
 
     global $post;
 
