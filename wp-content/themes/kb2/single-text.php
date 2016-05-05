@@ -27,7 +27,7 @@
 
 					<h3>Collections</h3>
 
-					<ul>
+					<ul class='image-subjects-links'>
 						<?php 
 							
 							$collections = get_field( 'collections' ); 
@@ -47,7 +47,7 @@
 
 					<h3>Tags</h3>
 					
-					<ul>
+					<ul class='image-subjects-links'>
 						<?php 
 							
 							$tags = get_field( 'tags' ); 
@@ -72,7 +72,7 @@
 						
 						if( !empty($subjects) ): ?>
 							
-							<ul>
+							<ul class='image-subjects-links'>
 							
 							<?php foreach( $subjects as $subject ): ?>
 								
@@ -93,11 +93,11 @@
 						
 						$publication_year = get_field('yearpublished');
 
-						if(!empty($publication_year)):
+						if(!empty($publication_year)): ?>
 							
-							echo $publication_year;
+							<p class='image-subjects-links'><?php echo $publication_year; ?></p>
 						
-						endif;
+						<?php endif;
 					
 					?>
 
@@ -107,7 +107,7 @@
 						
 						if( !empty( $originalFormat ) ): ?>
 							
-							<h3>Original Format</h3><?php echo $originalFormat; ?>
+							<h3>Original Format</h3><p class='image-subjects-links'><?php echo $originalFormat; ?></p>
 						
 						<?php endif;
 					
@@ -121,7 +121,7 @@
 						
 						if( !empty( $accessionNumber ) ): ?>
 							
-							<h3>Accession Number</h3><?php echo $accessionNumber; ?>
+							<h3>Accession Number</h3><p class='image-subjects-links'><?php echo $accessionNumber; ?></p>
 						
 						<?php endif;
 					

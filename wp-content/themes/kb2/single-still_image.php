@@ -71,30 +71,47 @@
 
 
 					<h3>Subjects</h3>
+					
 					<?php
-					//trying to echo out the subjects for an individual image.
-					//Not sure where I'm going wrong here. I referenced
-					//http://www.advancedcustomfields.com/resources/taxonomy/ 
+					
 						$subjects = get_field('subjects');
+						
 						if( !empty($subjects) ): ?>
+							
 							<ul class='image-subjects-links'>
+							
 							<?php foreach( $subjects as $subject ): ?>
+								
 								<li><a href="<?php echo get_term_link($subject->term_id); ?>" class="term subject"><?php echo $subject->name; ?></a></li>
+							
 							<?php endforeach; ?>
+						
 						</ul>
+					
 					<?php endif; ?>
 					
 				</div>
+				
 				<div class='grid-3'>
-					<h3>Format of the original:</h3><p><?php the_field( 'format_original' ); ?></p>
-					<h3>Location</h3><p><?php the_field( 'location' ); ?></p>
+					
+					<h3>Format of the original:</h3><p class='image-subjects-links'><?php the_field( 'format_original' ); ?></p>
+					
+					<h3>Location</h3><p class='image-subjects-links'><?php the_field( 'location' ); ?></p>
+					
 					<?php 
+						
 						$file = get_field('master');
-						if( $file ): ?>	
-					<h3>Original Data File</h3><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
-					<?php endif; ?>
-					<h3>Accession number</h3><p><?php the_field( 'accession_number' ); ?><p>
+						
+							if( $file ): ?>	
+					
+								<h3 class='image-subjects-links'>Original Data File</h3><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
+							
+							<?php endif; ?>
+					
+								<h3>Accession number</h3><p class='image-subjects-links'><?php the_field( 'accession_number' ); ?><p>
+				
 				</div>
+			
 			</div>	
 
 			<!-- post thumbnail -->

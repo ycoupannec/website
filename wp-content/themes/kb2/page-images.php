@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div class="pageTitles">
 	<h1><?php the_title(); ?></h1>
+	<h3>Search our archive of images by subject</h3>
 </div>
 <div class="grid-container">
 	<?php

@@ -504,7 +504,8 @@ nav#nav-main a:hover {
 	list-style: none;
 }
 
-.image-subjects-links a {
+.image-subjects-links a,
+p.image-subjects-links {
 	display: inline-block;
 	padding: 10px 15px;
 	margin-bottom: 10px;
@@ -514,7 +515,8 @@ nav#nav-main a:hover {
 	transition: all 0.4s ease-in-out 0s;
 }
 
-.image-subjects-links a:hover {
+.image-subjects-links a:hover,
+p.image-subjects-links:hover {
 	background: #c2b280;
 }
 
