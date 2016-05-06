@@ -1,9 +1,46 @@
 <?php get_header(); ?>
 <div class="pageTitles">
 	<h1><?php the_title(); ?></h1>
-	<h3>Search our archive of images by subject</h3>
+	<h3>Latest Images</h3>
 </div>
+
+<?php
+
+	$args = array(
+		'post_type' => 'still_image',
+		'posts_per_page' => 5
+	);
+
+	$latest_posts = get_posts($args);
+
+?>
+
+<div class='grid-container'>
+	<?php if( !empty($latest_posts) ) :
+		foreach($latest_posts as $latest_post) : ?>
+
+		<div class='grid-1-5'>
+				<?php $images = get_field('images', $latest_post->ID); ?>
+				<?php if( !empty($images) ) :
+					foreach($images as $image) : ?>
+						<a href="<?php echo get_permalink( $latest_post->ID ); ?>"> 
+							<img src="<?php echo $image['image']['sizes']['thumbnail']; ?>" alt="<?php echo $image['image']['alt']; ?>">
+						</a>
+					<?php endforeach;
+				endif; 
+				?>
+		</div>
+
+		<?php endforeach;
+	endif;
+	?>
+</div>
+<div class="pageTitles">
+		<h3>Search our archive of images by subject</h3>
+	</div>	
 <div class="grid-container">
+	
+	
 	<?php
 
 		$subjects = $wpdb->get_results(
@@ -86,7 +123,7 @@
 
 								<?php if(isset($image['image']['sizes']['thumbnail'])): ?>
 
-									<img src="<?php echo $image['image']['sizes']['thumbnail']; ?>" alt="<?php echo $image['image']['alt'] ?>" />		
+									<img src="<?php echo $image['image']['sizes']['thumbnail']; ?>" alt="<?php echo $image['image']['alt']; ?>" />		
 
 								<?php endif; ?>
 
