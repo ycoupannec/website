@@ -1,7 +1,52 @@
 <?php get_header(); ?>
 <div class="pageTitles">
 	<h1><?php the_title(); ?></h1>
+	<h3>Latest Publications</h3>
 </div>
+
+<?php 
+	$args = array(
+		'post_type' => 'text',
+		'posts_per_page' => 5
+	);
+
+	$latest_posts = get_posts($args);
+?>
+
+<div class='grid-container'>
+
+	<?php if(!empty ($latest_posts) ) :
+		
+		foreach($latest_posts as $latest) : 
+			
+			$images = get_field('images', $latest->ID); ?>
+
+				<div class='grid-1-5'>
+					
+					<?php if(isset($images[0]['image']['sizes']['700w'])): ?>
+
+						<a href='<?php echo get_permalink( $latest->ID ); ?>'> 
+						
+							<img src="<?php echo $images[0]['image']['sizes']['700w']; ?>">
+			
+						</a>
+
+					<?php endif; ?>
+
+				</div>
+
+		<?php endforeach; 
+
+	endif; ?>
+
+</div>
+
+<div class="pageTitles">
+	
+	<h3>Browse our publications by subject</h3>
+
+</div>
+
 <div class="grid-container">
 
 	<?php

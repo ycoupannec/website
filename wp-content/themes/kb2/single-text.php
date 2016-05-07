@@ -19,6 +19,7 @@
 						<img src="<?php echo $images[0]['image']['sizes']['700w']; ?>" />
 
 					<?php endif; 
+				
 				?>
 					
 				</div>
@@ -54,6 +55,7 @@
 							//print_r($tags); 
 
 							if( !empty($tags) ):
+								
 								foreach($tags as $tag): ?>
 
 									<li><a href="<?php echo get_term_link($tag->term_id); ?>" class="term tag"><?php echo $tag->name; ?></a></li>
