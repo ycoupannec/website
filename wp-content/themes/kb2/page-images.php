@@ -4,18 +4,16 @@
 	<h3>Latest Images</h3>
 </div>
 
-<?php //test query
+<?php
 
-	$args = array(
-		'post_type' => 'still_image',
-		get_terms(array(
+	//Get all subjects
+	$subjects = get_terms(array(
 			'taxonomy' => 'subject',
 			'hide_empty' => false
-		))
-	);
+	));
 
-	foreach($args[0] as $arg) :
-		print_r($arg->name);
+	foreach($subjects as $subject) :
+		print_r($subject);
 	endforeach;
 ?>
 
