@@ -1505,6 +1505,50 @@ footer {
 	padding-top: 40px;
 }
 
+.link_icons {
+	text-align: center;
+}
+
+.papers_past_icon {
+	display: inline-block;
+	font-size: 0;
+	width: 150px;
+	height: 60px;
+	background: #f8f8f8 url('img/paperspast.png') no-repeat center;
+	background-size: 100%;
+	vertical-align: middle;	
+}
+
+.nz_history_icon {
+	display: inline-block;
+	font-size: 0;
+	width: 90px;
+	height: 90px;
+	background: #e5e5ff url('img/NZHistory.png') no-repeat center;
+	background-size: 100%;
+	vertical-align: middle;	
+}
+
+.nat_lib_icon {
+	display: inline-block;
+	font-size: 0;
+	width: 250px;
+	height: 60px;
+	background: #e5e5ff url('img/nat_lib.jpg') no-repeat center;
+	background-size: 100%;
+	vertical-align: middle;	
+}
+
+.te_ara_icon {
+	display: inline-block;
+	font-size: 0;
+	width: 75px;
+	height: 75px;
+	background: #e5e5ff url('img/teara.png') no-repeat center;
+	background-size: 100%;
+	vertical-align: middle;	
+}
+
 
 
 	

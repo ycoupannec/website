@@ -25,6 +25,12 @@
 						<p>National Library</p>
 					</div>
 				</div>
+				<div class='link_icons'>
+					<div class='papers_past_icon'></div>
+					<div class='nz_history_icon'></div>
+					<div class='nat_lib_icon'></div>
+					<div class='te_ara_icon'></div>
+				</div>
 			</footer>
 			</div>
 			<!-- /footer -->
