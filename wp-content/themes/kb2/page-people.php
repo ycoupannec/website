@@ -1,12 +1,51 @@
 <?php get_header(); ?>
 
+	
 	<div class="container">
+		
 		<div class="pageTitles">
+		
 		<h1><?php the_title(); ?></h1>
+	
 	</div>
-	<div class="lndngPgFtr">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/sliderImg.jpg" />
-			</div>
+	
+	<?php
+		
+		$args = array(
+
+			'post_type' => 'person',
+
+			'posts_per_page' => 5
+
+		);
+
+		$latest_posts = get_posts($args);
+	
+	?>
+	
+	<div class='grid-container'>
+
+		<?php 
+			
+			if( !empty( $latest_posts ) ) :
+
+				 foreach( $latest_posts as $latest_post ) : ?>
+
+				 	<div class='grid-1-5 image-subjects-links'>
+
+				 		<a href='<?php echo get_permalink( $latest_post->ID ); ?>'>
+
+				 			<?php echo $latest_post->post_title; ?>
+
+				 		</a>
+
+				 	</div>
+			
+				<?php endforeach;
+
+			endif; ?>
+
+	</div>
 
 	<ul class='grid-container namesList link-hover peopleList'>
 
