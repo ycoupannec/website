@@ -492,4 +492,23 @@ function quick_view_template($single_template) {
 add_filter( 'single_template', 'quick_view_template' );
 
 
+function kb_nicename($post_type) {
+
+    $names = array(
+        'still_image' => 'Image',
+        'video' => 'Video / Film',
+        'text' => 'Text / Publication',
+        'person' => 'Person',
+        'audio' => 'Audio'
+    );
+
+    if(array_key_exists($post_type, $names)) {
+        return $names[$post_type];
+    }
+    //else
+    return $post_type;    
+
+}
+
+
 ?>

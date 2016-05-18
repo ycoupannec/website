@@ -142,7 +142,7 @@
 			<!-- /post thumbnail -->
 
 			
-
+			<?php /*
 			<!-- post details -->
 			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
 			<span class="author"><?php _e( 'Published by', 'kb2' ); ?> <?php the_author_posts_link(); ?></span>
@@ -161,20 +161,12 @@
 
 			<?php comments_template(); ?>
 
+			*/ ?>
+
 		</article>
 		<!-- /article -->
 
 	<?php endwhile; ?>
-
-	<?php else: ?>
-
-		<!-- article -->
-		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'kb2' ); ?></h1>
-
-		</article>
-		<!-- /article -->
 
 	<?php endif; ?>
 
@@ -182,6 +174,6 @@
 	<!-- /section -->
 	</main>
 
-<?php get_sidebar(); ?>
+
 
 <?php get_footer(); ?>
