@@ -6,8 +6,11 @@
 
 		<h2><a href="<?php echo get_permalink($post->ID); ?>"><?php the_title(); ?></a></h2>
 		<p><?php echo kb_nicename($post->post_type); ?></p>
-		<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
-		<p class='lightbox_icon'></p>
+		<span class="action_buttons">
+			<a class='view_button' href="<?php echo get_permalink($post->ID); ?>">View</a>
+		</span>
+		
+		<!--<span class="quick_view"><a class="lightbox_icon quick_view" href="<?php the_permalink(); ?>?quickview=true">Quick view</a></span>-->
 	</div>
 	
 </article>

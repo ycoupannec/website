@@ -1465,7 +1465,7 @@ footer {
 .action_buttons { width:100%; display:block;}
 
 .action_buttons > span { display:inline-block; width:49%; text-align:left;}
-.action_buttons > span.quick_view { text-align:right;}
+.action_buttons > span.quick_view { text-align:right; float:right;}
 
 .view_button {
 	display: inline-block;

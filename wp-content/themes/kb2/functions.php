@@ -487,6 +487,15 @@ function quick_view_template($single_template) {
     if ($post->post_type == 'text') {
           $single_template = dirname( __FILE__ ) . '/quickview-text.php';
     }
+
+    if ($post->post_type == 'video') {
+          $single_template = dirname( __FILE__ ) . '/quickview-video.php';
+    }
+
+    if ($post->post_type == 'still_image') {
+          $single_template = dirname( __FILE__ ) . '/quickview-image.php';
+    }
+
     return $single_template;
 }
 add_filter( 'single_template', 'quick_view_template' );

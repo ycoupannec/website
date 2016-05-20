@@ -53,12 +53,22 @@
 
 				//console.log(data);
 
-				if( $(data).find('img').length ) {
+				if( $(data).find('.images').length ) {
+					console.log('adding image');
 					
 					$(data).find('img').each(function(){
 						items.push({src: $(this).attr('src'), type : 'image' })
 					});
 				}
+
+				if( $(data).find('.video').length ) {
+					console.log('adding video');
+					
+					$(data).find('iframe').each(function(){
+						items.push({src: $(this).attr('src'), type : 'iframe' })
+					});
+				}			
+
 				console.log(items);
 				if(items.length) {
 
