@@ -84,13 +84,24 @@
 
 			foreach($landingpages as $page): ?>
 
-				<div class="grid-3">
-					<a href="<?php echo get_permalink($page['landing_page']->ID); ?>"><img src="<?php echo $page['image']['sizes']['300w']; ?>" alt="<?php echo $page['image']['alt'] ?>" /></a>	
-					<h3><?php echo $page['landing_page']->post_title; ?></h3>
-					<p><?php echo $page['blurb']; ?></p>						
+				<div id="front_page" class="grid-3">
+
+					
+					
+						<a href="<?php echo get_permalink($page['landing_page']->ID); ?>"><img src="<?php echo $page['image']['sizes']['300w']; ?>" alt="<?php echo $page['image']['alt'] ?>" /></a>	
+						
+						<div class="front_page_thumb">
+
+						<h3><?php echo $page['landing_page']->post_title; ?></h3>
+						
+						<p><?php echo $page['blurb']; ?></p>						
+					
+					</div>
+
 				</div>
 
 	<?php
+			
 			endforeach;
 
 		endif;

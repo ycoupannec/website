@@ -1556,6 +1556,19 @@ footer {
 	vertical-align: middle;	
 }
 
+#front_page {
+	padding-left: 0;
+	padding-right: 0;
+	background: white;
+}
+
+.front_page_thumb {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+
+
 
 
 	

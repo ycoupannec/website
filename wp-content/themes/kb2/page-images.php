@@ -6,19 +6,6 @@
 
 <?php
 
-	//Get all subjects
-	$subjects = get_terms(array(
-			'taxonomy' => 'subject',
-			'hide_empty' => false
-	));
-
-	foreach($subjects as $subject) :
-		print_r($subject);
-	endforeach;
-?>
-
-<?php
-
 	$args = array(
 		'post_type' => 'still_image',
 		'posts_per_page' => 5
