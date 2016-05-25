@@ -15,100 +15,147 @@
 			<div class="grid-container">
 				
 				<div class='grid-6'>
+					
 					<h2><?php the_title(); ?></h2>
 					
 					<?php if( have_rows('images') ): ?>
+						
 						<?php while( have_rows('images') ): the_row(); 
 						// vars
+							
 							$image = get_sub_field('image');
+						
 						?>
+						
 						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+						
 						<?php endwhile; ?>
+					
 					<?php endif; ?>
+				
 				
 				</div>
 
 				<div class='grid-3'>
-
-					<h3>Collections</h3>
-
-					<ul class='image-subjects-links'>
-						<?php 
-							
-							$collections = get_field( 'collections' ); 
-							//print_r($collections); 
-
-							if( !empty($collections) ):
-								foreach($collections as $collection): ?>
-
-									<li><a href="<?php echo get_term_link($collection->term_id); ?>" class="term collection"><?php echo $collection->name; ?></a></li>
-
-							<?php
-								endforeach;
-							endif;
-						?>
-					</ul>
-
-
-					<h3>Tags</h3>
 					
-					<ul class='image-subjects-links'>
-						<?php 
-							
-							$tags = get_field( 'tags' ); 
-							//print_r($tags); 
+					<?php 
+						
+					$collections = get_field( 'collections' ); 
+					//print_r($collections); 
 
-							if( !empty($tags) ):
-								foreach($tags as $tag): ?>
+					if( !empty($collections) ): ?>
 
-									<li><a href="<?php echo get_term_link($tag->term_id); ?>" class="term tag"><?php echo $tag->name; ?></a></li>
+						<h3>Collections</h3>
 
-							<?php
-								endforeach;
-							endif;
-						?>
-					</ul>
+						<ul class='image-subjects-links'>
+						
+							<?php foreach($collections as $collection): ?>
 
+								<li><a href="<?php echo get_term_link($collection->term_id); ?>" class="term collection"><?php echo $collection->name; ?></a></li>
 
-					<h3>Subjects</h3>
+							<?php endforeach; ?>
+
+						</ul>
+					
+					<?php endif; ?>
+					
+					<?php 
+						
+					$tags = get_field( 'tags' ); 
+					//print_r($tags); 
+
+					if( !empty($tags) ): ?>
+
+						<h3>Tags</h3>
+			
+						<ul class='image-subjects-links'>
+						
+							<?php foreach($tags as $tag): ?>
+
+								<li><a href="<?php echo get_term_link($tag->term_id); ?>" class="term tag"><?php echo $tag->name; ?></a></li>
+
+							<?php endforeach; ?>
+
+						</ul>
+
+					<?php endif; ?>
 					
 					<?php
 					
-						$subjects = get_field('subjects');
+					$subjects = get_field('subjects');
 						
-						if( !empty($subjects) ): ?>
-							
-							<ul class='image-subjects-links'>
-							
+					if( !empty($subjects) ): ?>
+
+						<h3>Subjects</h3>
+						
+						<ul class='image-subjects-links'>
+						
 							<?php foreach( $subjects as $subject ): ?>
 								
 								<li><a href="<?php echo get_term_link($subject->term_id); ?>" class="term subject"><?php echo $subject->name; ?></a></li>
 							
 							<?php endforeach; ?>
-						
-						</ul>
 					
+						</ul>
+				
 					<?php endif; ?>
 					
 				</div>
 				
 				<div class='grid-3'>
+
+					<?php $origianl_format = get_field( 'format_original' );
+
+					if( !empty( $origianl_format ) ): ?>
 					
-					<h3>Format of the original:</h3><p class='image-subjects-links'><?php the_field( 'format_original' ); ?></p>
+						<h3>Format of the original:</h3>
+
+						<p class='image-subjects-links'>
+
+							<?php the_field( 'format_original' ); ?>
+
+						</p>
+
+					<?php endif; ?>
 					
-					<h3>Location</h3><p class='image-subjects-links'><?php the_field( 'location' ); ?></p>
+					<?php $location = get_field( 'location' );
+
+					if( !empty( $location )) : ?>
+
+						<h3>Location</h3>
+
+						<p class='image-subjects-links'>
+
+							<?php echo $location; ?>
+
+						</p>
+
+					<?php endif; ?>
 					
 					<?php 
 						
-						$file = get_field('master');
+					$file = get_field('master');
 						
-							if( $file ): ?>	
+					if( $file ): ?>	
+			
+						<h3 class='image-subjects-links'>Original Data File</h3>
+
+						<a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
 					
-								<h3 class='image-subjects-links'>Original Data File</h3><a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
-							
-							<?php endif; ?>
+					<?php endif; ?>
+
+					<?php $accession_number = get_field( 'accession_number' );
+
+					if( !empty( $accession_number ) ) : ?>
 					
-								<h3>Accession number</h3><p class='image-subjects-links'><?php the_field( 'accession_number' ); ?><p>
+						<h3>Accession number</h3>
+
+						<p class='image-subjects-links'>
+
+							<?php the_field( 'accession_number' ); ?>
+						<p>
+
+					<?php endif; ?>
 				
 				</div>
 			
