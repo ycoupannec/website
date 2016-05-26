@@ -9,7 +9,7 @@
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<div class="grid-container">
+			<div class="grid-container bottom_margin">
 				<div class='grid-6'>
 					<h2><?php the_title(); ?></h2>
 					<h3>Name:</h3>
