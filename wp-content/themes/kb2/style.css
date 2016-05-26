@@ -1474,6 +1474,7 @@ footer {
 	padding: 8px 20px;
 	border-radius: 4px;
 	vertical-align: middle;
+	text-decoration: none;
 }
 
 .view_button:hover {
