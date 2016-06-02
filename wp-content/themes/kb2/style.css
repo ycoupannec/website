@@ -1370,22 +1370,20 @@ footer {
 /* Tiles
 ------------------- */
 
-.tiles { display: block; box-sizing: border-box;  max-width:1200px; margin:0 auto;}
+/* all */
+
+.tiles { display: block; box-sizing: border-box;  max-width:1200px; margin:0 auto;  font-size:0;} /* font-size http://stackoverflow.com/a/11456539 */
 
 .tiles .tile { 
 	display:inline-block;  
 	margin:0; 
-	padding:20px; 	
-	width:33%;
+	padding:20px;
+	font-size:1rem; /* IE9+ */	
 }
 
 .tiles .tile .inner {
 	background-color:#f8f8f8;
 	padding:20px;
-}
-
-.tiles .tile:nth-child(3n+1) {
-	clear:left;
 }
 
 .tiles .tile .imageWrap {
@@ -1394,17 +1392,38 @@ footer {
 }
 
 
+/* 3 */
+
+.tiles-3 .tile {
+	width:33%;
+}
+
+.tiles-3 .tile:nth-child(3n+1) {
+	clear:left;
+}
+
+/* 4 */
+
+.tiles-4 .tile {
+	width:25%;
+}
+
+.tiles-4 .tile:nth-child(4n+1) {
+	clear:left;
+}
+
+
 @media (max-width: 800px) {
 	
-	.tiles .tile {
+	.tiles-3 .tile, .tiles-4 .tile {
 		width: 50%;		
 	}
 
-	.tiles .tile:nth-child(3n+1) {
+	.tiles-3 .tile:nth-child(3n+1), .tiles-4 .tile:nth-child(4n+1) {
 		clear:none;
 	}	
 
-	.tiles .tile:nth-child(2n+1) {
+	.tiles-3 .tile:nth-child(2n+1), .tiles-4 .tile:nth-child(2n+1) {
 		clear:left;
 	}
 
@@ -1413,7 +1432,7 @@ footer {
 
 @media (max-width: 600px) {
 	
-	.tiles .tile {
+	.tiles-3 .tile, .tiles-4 .tile {
 		width: 100%;		
 	}
 
@@ -1471,11 +1490,12 @@ footer {
 
 .action_buttons { width:100%; display:block;}
 
-.action_buttons > span { display:inline-block; width:49%; text-align:left;}
-.action_buttons > span.quick_view { text-align:right; float:right;}
+.action_buttons > span { display:block; width:49%; text-align:left;}
+.action_buttons > span.quick_view { padding-left:30px;background: #f8f8f8 url('img/search.png') no-repeat left bottom; background-size: 20px;}
+.action_buttons > span.more { float:right;text-align:right;}
 
 .view_button {
-	display: inline-block;
+
 	color: #fff;
 	background: #3f8abf;
 	padding: 8px 20px;
@@ -1490,11 +1510,9 @@ footer {
 }
 
 .lightbox_icon {
-	display: inline-block;
-	font-size: 0;
-	width: 25px;
+	display: inline-block;	
 	height: 25px;
-	background: #f8f8f8 url('img/search.png') no-repeat center;
+	
 	background-size: cover;
 	vertical-align: middle;	
 }

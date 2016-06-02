@@ -13,7 +13,7 @@
 	$latest_posts = get_posts($args);
 ?>
 
-<div class='grid-container'>
+<div class="grid-container">
 
 	<?php if(!empty ($latest_posts) ) :
 		
@@ -21,7 +21,7 @@
 			
 			$images = get_field('images', $latest->ID); ?>
 
-				<div class='grid-1-5'>
+				<div class="grid-1-5">
 					
 					<?php if(isset($images[0]['image']['sizes']['700w'])): ?>
 
@@ -88,7 +88,7 @@
 				</div>
 				
       			<?php if ( $counter % 3 == 0 && $counter != $number_of_subjects) : ?>
-        			</div><div class='grid-container'>
+        			</div><div class="grid-container">
         		<?php endif; ?>
 
 			<?php endforeach;
@@ -96,6 +96,6 @@
 		
 	?>
 
-</div>
+</div><!-- .grid-container -->
 
 <?php get_footer(); ?>
