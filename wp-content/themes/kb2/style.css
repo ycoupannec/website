@@ -825,6 +825,7 @@ footer {
 	text-align: center;
 	margin: 0 auto;
 	padding: 0;
+	max-width: 550px;
 }
 
 .newsSubscribe {
@@ -836,9 +837,11 @@ footer {
 	padding:5px 8px;
 	background:rgba(253, 253, 253, 1);
     border:1px solid #ccc;
-    width: 74%;
+    width: 65%;
     max-width: 440px;
-    line-height: 1.3;
+    height: 3em;
+    display: inline-block;
+    margin: 0 auto;
 }
 
 .footerSearch {
@@ -973,8 +976,10 @@ footer {
 	padding: 5px 8px;
     background: rgba(253, 253, 253, 1);
     border: 1px solid #ccc;
-    width: 74%;
-    line-height: 1.3;
+    width: 65%;
+    height: 3em;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 .search input[type="text"] {
@@ -982,15 +987,17 @@ footer {
 }
 
 .homesearch .button,
-.button { 
+.button {
+	display: inline-block;
+	margin-left: -5px; 
 	padding: 5px 8px;
     border: 1px solid #ccc;
     background-color: #9DB68C;
     color: #fafafa;
-    width: 90px;
-    line-height: 1.3; 
+    width: 35%;
+    height: 3em;
+    vertical-align: middle;
 }
-
 
 /* Search results
 ---------------------------------*/
